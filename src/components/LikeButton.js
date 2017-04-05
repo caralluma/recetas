@@ -5,6 +5,7 @@ import HeartGrey from '../images/heart-grey.svg'
 import HeartRed from '../images/heart-red.svg'
 import toggleLike from '../actions/recipes/toggleLike'
 
+
 export class LikeButton extends PureComponent {
   static propTypes = {
     _id: PropTypes.string.isRequired,

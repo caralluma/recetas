@@ -18,11 +18,11 @@ class RecipeItem extends PureComponent {
     const { _id, title, summary, vegan, vegetarian, pescatarian, liked, photo } = this.props
 
     const style = {
-      height: '1em'
+      height: '1.5em'
     }
 
     const image = {
-      height: '20em' 
+      height: '20em'
     }
 
     return (
