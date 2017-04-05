@@ -25,7 +25,7 @@ export class RecipesContainer extends PureComponent {
         <header>
           <Title content="Recipes" />
         </header>
-        <RecipeEditor />
+        <RecipeEditor title={''} summary={''} vegan={false} pescatarian={false} vegetarian={false} photo={''}/>
         <main>
           { this.props.recipes.map(this.renderRecipe.bind(this)) }
         </main>
