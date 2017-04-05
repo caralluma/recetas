@@ -3,6 +3,7 @@ import { connect } from 'react-redux'
 import Title from '../components/Title'
 import RecipeItem from './RecipeItem'
 import seedRecipes from '../actions/recipes/seed'
+import RecipeEditor from './RecipeEditor'
 
 export class RecipesContainer extends PureComponent {
   static propTypes = {
@@ -24,10 +25,11 @@ export class RecipesContainer extends PureComponent {
         <header>
           <Title content="Recipes" />
         </header>
-
+        <RecipeEditor title={''} summary={''} vegan={false} pescatarian={false} vegetarian={false} photo={''}/>
         <main>
           { this.props.recipes.map(this.renderRecipe.bind(this)) }
         </main>
+
       </div>
     )
   }

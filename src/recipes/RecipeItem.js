@@ -11,13 +11,18 @@ class RecipeItem extends PureComponent {
     vegan: PropTypes.bool.isRequired,
     vegetarian: PropTypes.bool.isRequired,
     pescatarian: PropTypes.bool.isRequired,
+    photo: PropTypes.string.isRequired
   }
 
   render() {
-    const { _id, title, summary, vegan, vegetarian, pescatarian, liked } = this.props
+    const { _id, title, summary, vegan, vegetarian, pescatarian, liked, photo } = this.props
 
     const style = {
       height: '1em'
+    }
+
+    const image = {
+      height: '20em' 
     }
 
     return (
@@ -25,6 +30,7 @@ class RecipeItem extends PureComponent {
         <h1>{ title }</h1>
         <div>
           <p>{ summary }</p>
+          <img style={image} src={photo} />
           <ul>
             { vegan && <li title="vegan"><img style={style} src={Vegan} /></li> }
             { !vegan && vegetarian && <li title="vegetarian"><img style={style} src={Vegetarian} /></li> }
