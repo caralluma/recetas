@@ -1,4 +1,5 @@
 import API from '../../middleware/api'
+import appLoading from '../loading'
 
 export const FETCHED_RECIPES = 'FETCHED_RECIPES'
 
@@ -8,10 +9,15 @@ const recipes = api.service('recipes')
 export default () => {
   return (dispatch) => {
     console.log('Fetching recipes...')
+    dispatch(appLoading(true))
     recipes.find()
       .then((result) => {
-        console.log('Results are in!', result)
-        dispatch(fetchedRecipes(result))
+        setTimeout(function() {
+          console.log('Results are in!', result)
+          dispatch(fetchedRecipes(result))
+          dispatch(appLoading(false))
+        }, 3000)
+         setTimeout( callback, time)
       })
   }
 }

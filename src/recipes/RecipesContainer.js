@@ -28,6 +28,7 @@ export class RecipesContainer extends PureComponent {
         </header>
         <RecipeEditor title={''} summary={''} vegan={false} pescatarian={false} vegetarian={false} photo={''}/>
         <main>
+          { this.props.loading ? 'We are loading your data!': null }
           { this.props.recipes.map(this.renderRecipe.bind(this)) }
         </main>
 
@@ -36,6 +37,6 @@ export class RecipesContainer extends PureComponent {
   }
 }
 
-const mapStateToProps = ({ recipes }) => ({ recipes })
+const mapStateToProps = ({ recipes, loading }) => ({ recipes, loading })
 
 export default connect(mapStateToProps, { fetchRecipes })(RecipesContainer)
