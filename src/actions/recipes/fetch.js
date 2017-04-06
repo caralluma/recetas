@@ -20,7 +20,6 @@ export default () => {
           dispatch(loadSuccess())
           dispatch(appLoading(false))
         }, 3000)
-         setTimeout( callback, time)
       })
       .catch((error) => {
         dispatch(loadError(error))
