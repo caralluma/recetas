@@ -10,7 +10,7 @@ export class LikeButton extends PureComponent {
   static propTypes = {
     _id: PropTypes.string.isRequired,
     onChange: PropTypes.func.isRequired,
-    liked: PropTypes.bool.isRequired,
+    liked: PropTypes.bool.isRequired
   }
 
   classNames() {

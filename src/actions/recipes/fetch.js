@@ -1,5 +1,7 @@
 import API from '../../middleware/api'
 import appLoading from '../loading'
+import loadSuccess from '../load-success'
+import loadError from  '../load-error'
 
 export const FETCHED_RECIPES = 'FETCHED_RECIPES'
 
@@ -15,10 +17,14 @@ export default () => {
         setTimeout(function() {
           console.log('Results are in!', result)
           dispatch(fetchedRecipes(result))
+          dispatch(loadSuccess())
           dispatch(appLoading(false))
         }, 3000)
          setTimeout( callback, time)
       })
+      .catch((error) => {
+        dispatch(loadError(error))
+        })
   }
 }
 
