@@ -22,7 +22,7 @@ export class RecipePage extends PureComponent {
 }
 
 const mapStateToProps = ({ recipes }, { params }) => {
-  const recipe = recipes.reduce((prev, next) => {
+  const recipe = recipes.filter((prev, next) => {
     if (next._id === params.recipeId) {
       return next
     }

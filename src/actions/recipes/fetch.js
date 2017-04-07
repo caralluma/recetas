@@ -19,7 +19,7 @@ export default () => {
           dispatch(fetchedRecipes(result))
           dispatch(loadSuccess())
           dispatch(appLoading(false))
-        }, 3000)
+        }, 1500)
       })
       .catch((error) => {
         dispatch(loadError(error))

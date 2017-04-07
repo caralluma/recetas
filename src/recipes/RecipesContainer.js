@@ -30,6 +30,7 @@ export class RecipesContainer extends PureComponent {
         <main>
           { this.props.loading ? 'We are loading your data!': null }
           { this.props.recipes.map(this.renderRecipe.bind(this)) }
+          { this.props.loadError != null ? ' oh no how terrible :(' : null }
         </main>
 
       </div>
@@ -37,6 +38,6 @@ export class RecipesContainer extends PureComponent {
   }
 }
 
-const mapStateToProps = ({ recipes, loading }) => ({ recipes, loading })
+const mapStateToProps = ({ recipes, loading, loadError }) => ({ recipes, loading, loadError })
 
 export default connect(mapStateToProps, { fetchRecipes })(RecipesContainer)

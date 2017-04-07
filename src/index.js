@@ -4,6 +4,7 @@ import ReactDOM from 'react-dom'
 import { Provider } from 'react-redux'
 import { Router, Route, IndexRoute } from 'react-router'
 import store, { history } from './store'
+import SignUp from './users/SignUp.js'
 
 import App from './App'
 import RecipesContainer from './recipes/RecipesContainer'
@@ -15,6 +16,7 @@ ReactDOM.render(
       <Route path="/" component={App}>
         <IndexRoute component={RecipesContainer} />
         <Route path="/recipes/:recipeId" component={RecipePage} />
+        <Route path="/sign-up" component={SignUp} />
       </Route>
     </Router>
   </Provider>,
